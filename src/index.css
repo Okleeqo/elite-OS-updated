@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply h-full antialiased;
+  }
+  
+  body {
+    @apply h-full bg-gray-50 dark:bg-gray-900;
+  }
+
+  #root {
+    @apply h-full;
+  }
+}
+
+.nav-link {
+  @apply flex items-center px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300;
+}
+
+.nav-link-active {
+  @apply bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400;
+}
+
+/* Optimize scrollbars */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* Dark mode transitions */
+.dark * {
+  @apply transition-colors duration-200;
+}
+
+/* Optimize for 1920x1080 */
+@media (min-width: 1920px) {
+  .container {
+    @apply max-w-screen-fhd mx-auto;
+  }
+}
